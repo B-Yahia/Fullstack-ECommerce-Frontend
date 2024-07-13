@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import ProductListingPages from "./Pages/ProductListingPages/ProductListingPages";
+import Header from "./Components/Header/Header";
+import CartModal from "./Components/CartModal/CartModal";
+import { useSelector } from "react-redux";
+import ProdutDetailsPage from "./Pages/ProdutDetailsPage/ProdutDetailsPage";
 
 function App() {
+  const modal = useSelector((state) => state.cart.hiden);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app_container">
+      <Header />
+      {!modal && <CartModal />}
+
+      <main>
+        <Routes>
+          <Route path="/" element={<ProductListingPages />} />
+          <Route path="/category/:id" element={<ProductListingPages />} />
+          <Route path="/product/:id" element={<ProdutDetailsPage />} />
+        </Routes>
+      </main>
     </div>
   );
 }
