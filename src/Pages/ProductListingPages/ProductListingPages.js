@@ -10,7 +10,7 @@ export default function ProductListingPages() {
   const param = useParams();
 
   useEffect(() => {
-    if (param.id === "all") {
+    if (param.id === "all" || !param.id) {
       setProducts(data.data.products);
     } else {
       setProducts(
