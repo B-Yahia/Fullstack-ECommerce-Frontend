@@ -28,9 +28,7 @@ export default function ColorAttribute(props) {
   }, [ListOfSelectedAtteributes, index, props.selectedAttr]);
   return (
     <div className="attribute_container">
-      <h2>
-        {props.attr.name} - {selectedAttrOptionId}
-      </h2>
+      <h2>{props.attr.name}</h2>
       <div className="attribute_items">
         {props.attr.items.map((item) => (
           <div

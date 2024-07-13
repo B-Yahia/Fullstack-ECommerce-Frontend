@@ -19,7 +19,7 @@ export default function Header() {
           <NavLink
             className="header_menu_option"
             key={index}
-            to={category.name === "all" ? "/" : "/category/" + category.name}
+            to={category.name}
           >
             {({ isActive }) => (
               <span

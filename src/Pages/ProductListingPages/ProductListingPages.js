@@ -10,12 +10,12 @@ export default function ProductListingPages() {
   const param = useParams();
 
   useEffect(() => {
-    if (param.id) {
+    if (param.id === "all") {
+      setProducts(data.data.products);
+    } else {
       setProducts(
         data.data.products.filter((product) => product.category === param.id)
       );
-    } else {
-      setProducts(data.data.products);
     }
   }, [param.id]);
   return (
