@@ -35,6 +35,7 @@ export default function ProductCard(props) {
           className="cart_btn"
           src={cart}
           onClick={() => quickShop(props.product)}
+          alt=""
         />
       )}
       <Link
@@ -43,7 +44,7 @@ export default function ProductCard(props) {
       >
         <div className="card_content">
           <div className="card_image_container">
-            <img className="card_image" src={props.product.gallery[0]} />
+            <img className="card_image" src={props.product.gallery[0]} alt="" />
             {!props.product.inStock && (
               <p className="in_stock_indicator">Out of stock</p>
             )}

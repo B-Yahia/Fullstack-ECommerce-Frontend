@@ -19,7 +19,7 @@ export default function ProductGallery(props) {
     }
   };
   return (
-    <div data-testid="product-gallery">
+    <div data-testid="product-gallery" className="product-gallery">
       <div className="product_images">
         {props.gallery.map((img, index) => (
           <img
@@ -31,6 +31,7 @@ export default function ProductGallery(props) {
             }
             key={index}
             onClick={() => setSelectedImg(index)}
+            alt=""
           />
         ))}
       </div>
@@ -39,9 +40,19 @@ export default function ProductGallery(props) {
           src={SlideBtn}
           className="slide_btn right_btn"
           onClick={incIndex}
+          alt=""
         />
-        <img src={SlideBtn} className="slide_btn left_btn" onClick={decIndex} />
-        <img src={props.gallery[selectedImg]} className="selected_image" />
+        <img
+          src={SlideBtn}
+          className="slide_btn left_btn"
+          onClick={decIndex}
+          alt=""
+        />
+        <img
+          src={props.gallery[selectedImg]}
+          className="selected_image"
+          alt=""
+        />
       </div>
     </div>
   );

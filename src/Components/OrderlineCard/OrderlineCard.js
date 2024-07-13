@@ -56,6 +56,7 @@ export default function OrderlineCard(props) {
         <img
           className="orederline_img"
           src={props.orderLine.product.gallery[0]}
+          alt=""
         />
       </div>
     </div>

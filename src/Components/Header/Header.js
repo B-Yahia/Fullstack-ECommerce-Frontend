@@ -35,7 +35,7 @@ export default function Header() {
       </nav>
       <div className="header_logo">
         <Link to={"/"} style={{ color: "inherit", textDecoration: "inherit" }}>
-          <img src={logo} />
+          <img src={logo} alt="" />
         </Link>
       </div>
       <div
@@ -43,7 +43,7 @@ export default function Header() {
         onClick={() => dispatch(toggleHideBtn())}
         data-testid="cart-btn"
       >
-        <img className="cart" src={cart} />
+        <img className="cart" src={cart} alt="" />
         {cartItemsCount > 0 && (
           <p className="cart_items_count">{cartItemsCount}</p>
         )}

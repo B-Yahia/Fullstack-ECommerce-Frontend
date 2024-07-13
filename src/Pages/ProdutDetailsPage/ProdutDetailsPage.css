@@ -101,3 +101,8 @@
   font-size: 18px;
   text-transform: uppercase;
 }
+.product-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}

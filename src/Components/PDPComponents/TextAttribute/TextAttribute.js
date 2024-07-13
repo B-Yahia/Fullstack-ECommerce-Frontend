@@ -26,7 +26,7 @@ export default function TextAttribute(props) {
     } else {
       setSelectedAttrOptionId(props.selectedAttr[index].attributeItem.id);
     }
-  }, [ListOfSelectedAtteributes]);
+  }, [ListOfSelectedAtteributes, index, props.selectedAttr]);
   return (
     <div
       className="attribute_container"

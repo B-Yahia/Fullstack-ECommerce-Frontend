@@ -26,7 +26,7 @@ export default function ProdutDetailsPage() {
   };
   useEffect(() => {
     dispatch(EmptyAttributesList());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="product_page_container">
       <ProductGallery gallery={product.gallery} />

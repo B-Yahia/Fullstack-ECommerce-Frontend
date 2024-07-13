@@ -11,7 +11,6 @@ export default function ColorAttribute(props) {
   const index = ListOfSelectedAtteributes.findIndex(
     (item) => item.attributeId === props.attr.id
   );
-
   const dispatch = useDispatch();
   const addAttr = (attrId, selectedAttr) => {
     const data = {
@@ -26,7 +25,7 @@ export default function ColorAttribute(props) {
     } else {
       setSelectedAttrOptionId(props.selectedAttr[index].attributeItem.id);
     }
-  }, [ListOfSelectedAtteributes]);
+  }, [ListOfSelectedAtteributes, index, props.selectedAttr]);
   return (
     <div className="attribute_container">
       <h2>
