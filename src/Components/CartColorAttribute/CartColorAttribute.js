@@ -1,3 +1,4 @@
+import { toKebabCase } from "../../Utils/functions";
 import "./CartColorAttribute.css";
 
 export default function CartColorAttribute(props) {
@@ -17,6 +18,15 @@ export default function CartColorAttribute(props) {
             }
             key={item.id}
             style={{ backgroundColor: item.value }}
+            data-testid={
+              item.id === props.selectedAttr[index].attributeItem.id
+                ? `cart-item-attribute-${toKebabCase(
+                    props.attr.name
+                  )}-${toKebabCase(item.displayValue)}-selected`
+                : `cart-item-attribute-${toKebabCase(
+                    props.attr.name
+                  )}-${toKebabCase(item.displayValue)}`
+            }
           ></div>
         ))}
       </div>

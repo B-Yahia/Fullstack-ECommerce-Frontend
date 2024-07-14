@@ -8,7 +8,7 @@ export default function CartTextAttribute(props) {
   return (
     <div
       className="cart_attribute_container"
-      data-testid={`cart-item-attribute-${props.attr.name}`}
+      data-testid={`cart-item-attribute-${toKebabCase(props.attr.name)}`}
     >
       <h2 className="cart_attribute_title">{props.attr.name}</h2>
       <div className="cart_attribute_items">
