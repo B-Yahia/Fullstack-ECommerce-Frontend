@@ -1,10 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./CartModal.css";
 import OrderlineCard from "../OrderlineCard/OrderlineCard";
+import { emptyTheCart } from "../../ReduxStore/CartSlice";
 
 export default function CartModal() {
   const cart = useSelector((state) => state.cart.order);
   const total = useSelector((state) => state.cart.orderTotal);
+  const dispatch = useDispatch();
+  const sendOrder = () => {
+    dispatch(emptyTheCart());
+  };
   return (
     <div className="modal_container">
       <div className="modal_overlay"></div>
@@ -34,7 +39,11 @@ export default function CartModal() {
               $ {total}
             </p>
           </div>
-          <button className="place_order" disabled={cart.length === 0}>
+          <button
+            className="place_order"
+            disabled={cart.length === 0}
+            onClick={sendOrder}
+          >
             Place Order
           </button>
         </div>

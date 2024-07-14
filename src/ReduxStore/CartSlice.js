@@ -67,9 +67,19 @@ const CartSlice = createSlice({
       state.orderTotal = calculateTheTotalAmount(state.order);
       localStorage.setItem("order", JSON.stringify(state.order));
     },
+    emptyTheCart: (state) => {
+      state.order = [];
+      state.orderTotal = 0;
+      localStorage.setItem("order", JSON.stringify(state.order));
+    },
   },
 });
 
-export const { addProductToCart, toggleHideBtn, decreaseUnits, increaseUnits } =
-  CartSlice.actions;
+export const {
+  addProductToCart,
+  toggleHideBtn,
+  decreaseUnits,
+  increaseUnits,
+  emptyTheCart,
+} = CartSlice.actions;
 export default CartSlice.reducer;
