@@ -20,16 +20,9 @@ export default function Header() {
             className="header_menu_option"
             key={index}
             to={category.name}
+            data-testid="category-link"
           >
-            {({ isActive }) => (
-              <span
-                data-testid={
-                  isActive ? "active-category-link" : "category-link"
-                }
-              >
-                {category.name}
-              </span>
-            )}
+            {category.name}
           </NavLink>
         ))}
       </nav>

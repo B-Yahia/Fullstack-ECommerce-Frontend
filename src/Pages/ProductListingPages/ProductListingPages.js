@@ -23,11 +23,7 @@ export default function ProductListingPages() {
       <h1 className="page_title">{param.id ? param.id : "All"}</h1>
       <div className="products_cards">
         {products.map((product) => (
-          <ProductCard
-            product={product}
-            key={product.id}
-            data-testid={`product-${product.name}`}
-          />
+          <ProductCard product={product} key={product.id} />
         ))}
       </div>
     </div>

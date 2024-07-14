@@ -63,7 +63,7 @@ export default function ProdutDetailsPage() {
           onClick={addProduct}
           data-testid="add-to-cart"
         >
-          Add to the Cart
+          ADD TO CART
         </button>
 
         <div

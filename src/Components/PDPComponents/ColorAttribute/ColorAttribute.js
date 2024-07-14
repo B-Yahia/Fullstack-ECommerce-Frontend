@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./ColorAttribute.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AddAttribute } from "../../../ReduxStore/AttributesSlice";
+import { toKebabCase } from "../../../Utils/functions";
 
 export default function ColorAttribute(props) {
   const ListOfSelectedAtteributes = useSelector(
@@ -27,7 +28,10 @@ export default function ColorAttribute(props) {
     }
   }, [ListOfSelectedAtteributes, index, props.selectedAttr]);
   return (
-    <div className="attribute_container">
+    <div
+      className="attribute_container"
+      data-testid={`product-attribute-${toKebabCase(props.attr.name)}`}
+    >
       <h2>{props.attr.name}</h2>
       <div className="attribute_items">
         {props.attr.items.map((item) => (

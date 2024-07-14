@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import cart from "../../Images/Cart.svg";
 import { addProductToCart } from "../../ReduxStore/CartSlice";
 import { Link } from "react-router-dom";
+import { toKebabCase } from "../../Utils/functions";
 
 export default function ProductCard(props) {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ export default function ProductCard(props) {
       <Link
         to={"/product/" + props.product.id}
         style={{ color: "inherit", textDecoration: "inherit" }}
+        data-testid={`product-${toKebabCase(props.product.name)}`}
       >
         <div className="card_content">
           <div className="card_image_container">

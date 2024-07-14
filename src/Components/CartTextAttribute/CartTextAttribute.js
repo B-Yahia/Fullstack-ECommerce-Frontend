@@ -1,3 +1,4 @@
+import { toKebabCase } from "../../Utils/functions";
 import "./CartTextAttribute.css";
 
 export default function CartTextAttribute(props) {
@@ -20,8 +21,12 @@ export default function CartTextAttribute(props) {
             }
             data-testid={
               item.id === props.selectedAttr[index].attributeItem.id
-                ? `cart-item-attribute-${props.attr.name}-${item.value}-selected`
-                : `cart-item-attribute-${props.attr.name}-${item.value}`
+                ? `cart-item-attribute-${toKebabCase(
+                    props.attr.name
+                  )}-${toKebabCase(item.value)}-selected`
+                : `cart-item-attribute-${toKebabCase(
+                    props.attr.name
+                  )}-${toKebabCase(item.value)}`
             }
             key={item.id}
           >

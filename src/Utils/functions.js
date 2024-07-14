@@ -31,3 +31,11 @@ export const calculateTheTotalAmount = (cart) => {
   }
   return parseFloat(total.toFixed(2));
 };
+
+export function toKebabCase(text) {
+  return text
+    .toLowerCase()
+    .replace(/[\W_]+/g, " ")
+    .trim()
+    .replace(/\s+/g, "-");
+}
