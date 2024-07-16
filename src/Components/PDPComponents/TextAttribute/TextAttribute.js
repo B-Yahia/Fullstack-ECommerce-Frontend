@@ -44,6 +44,9 @@ export default function TextAttribute(props) {
                 : "attribute_item_text"
             }
             key={item.id}
+            data-testid={`cart-item-attribute-${toKebabCase(props.attr.name)}-${
+              item.displayValue
+            }`}
           >
             {item.value}
           </div>

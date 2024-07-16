@@ -44,7 +44,9 @@ export default function Header() {
       >
         <img className="cart" src={cart} alt="" />
         {cartItemsCount > 0 && (
-          <p className="cart_items_count">{cartItemsCount}</p>
+          <p className="cart_items_count" data-testid="cart-count-bubble">
+            {cartItemsCount}
+          </p>
         )}
       </div>
     </div>
