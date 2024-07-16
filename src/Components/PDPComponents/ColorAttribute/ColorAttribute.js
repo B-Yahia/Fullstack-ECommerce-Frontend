@@ -44,7 +44,7 @@ export default function ColorAttribute(props) {
             key={item.id}
             style={{ backgroundColor: item.value }}
             onClick={() => addAttr(props.attr.id, item)}
-            data-testid={`cart-item-attribute-${toKebabCase(props.attr.name)}-${
+            data-testid={`product-attribute-${toKebabCase(props.attr.name)}-${
               item.displayValue
             }`}
           ></button>
