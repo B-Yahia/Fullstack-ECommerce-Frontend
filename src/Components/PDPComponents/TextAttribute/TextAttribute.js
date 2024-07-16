@@ -36,7 +36,7 @@ export default function TextAttribute(props) {
       <h2>{props.attr.name}</h2>
       <div className="attribute_items">
         {props.attr.items.map((item) => (
-          <div
+          <button
             onClick={() => addAttr(props.attr.id, item)}
             className={
               item.id === selectedAttrOptionId
@@ -49,7 +49,7 @@ export default function TextAttribute(props) {
             }`}
           >
             {item.value}
-          </div>
+          </button>
         ))}
       </div>
     </div>

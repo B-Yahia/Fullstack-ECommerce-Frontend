@@ -13,7 +13,7 @@ export default function CartTextAttribute(props) {
       <h2 className="cart_attribute_title">{props.attr.name}</h2>
       <div className="cart_attribute_items">
         {props.attr.items.map((item) => (
-          <div
+          <button
             className={
               item.id === props.selectedAttr[index].attributeItem.id
                 ? "cart_attribute_item_text selected"
@@ -31,7 +31,7 @@ export default function CartTextAttribute(props) {
             key={item.id}
           >
             {item.value}
-          </div>
+          </button>
         ))}
       </div>
     </div>

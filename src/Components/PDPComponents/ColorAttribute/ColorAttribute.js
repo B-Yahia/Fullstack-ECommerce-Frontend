@@ -35,7 +35,7 @@ export default function ColorAttribute(props) {
       <h2>{props.attr.name}</h2>
       <div className="attribute_items">
         {props.attr.items.map((item) => (
-          <div
+          <button
             className={
               item.id === selectedAttrOptionId
                 ? "selected_attribute_item"
@@ -47,7 +47,7 @@ export default function ColorAttribute(props) {
             data-testid={`cart-item-attribute-${toKebabCase(props.attr.name)}-${
               item.displayValue
             }`}
-          ></div>
+          ></button>
         ))}
       </div>
     </div>

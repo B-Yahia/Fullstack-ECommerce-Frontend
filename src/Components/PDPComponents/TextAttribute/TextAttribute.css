@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .selected_attribute_item_text {
   width: 63px;
