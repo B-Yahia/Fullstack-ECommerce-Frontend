@@ -12,6 +12,7 @@ export default function Header() {
   const [categories] = useState(data.data.categories);
   const cartItemsCount = useSelector((state) => state.cart.order.length);
   const dispatch = useDispatch();
+  const [activeCat, setActiveCat] = useState("");
   return (
     <div className="header_container">
       <nav className="header_menu">
@@ -20,7 +21,12 @@ export default function Header() {
             className="header_menu_option"
             key={index}
             to={category.name}
-            data-testid="category-link"
+            data-testid={
+              activeCat === category.name
+                ? "active-category-link"
+                : "category-link"
+            }
+            onClick={() => setActiveCat(category.name)}
           >
             {category.name}
           </NavLink>
