@@ -1,11 +1,11 @@
 import {
   ApolloClient,
   InMemoryCache,
-  HttpLink,
   ApolloProvider,
+  HttpLink,
 } from "@apollo/client";
 
-const httpLink = new HttpLink({ uri: "http://domain3.com" });
+const httpLink = new HttpLink({ uri: "http://domain4.local/graphql" });
 
 const client = new ApolloClient({
   link: httpLink,

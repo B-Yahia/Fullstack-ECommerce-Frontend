@@ -8,23 +8,23 @@ export default function ProductCard(props) {
   const dispatch = useDispatch();
 
   const quickShop = (product) => {
-    const attr = [];
+    const listOfSelectedAttributes = [];
     if (product.attributes.length) {
       product.attributes.forEach((element) => {
-        attr.push({
-          attributeId: element.id,
-          attributeItem: element.items[0],
+        listOfSelectedAttributes.push({
+          attributeSet: element,
+          attribute: element.items[0],
         });
       });
       const orderLine = {
         product: product,
-        selectedAttr: attr,
+        selectedAttributes: listOfSelectedAttributes,
       };
       dispatch(addProductToCart(orderLine));
     } else {
       const orderLine = {
         product: product,
-        selectedAttr: [],
+        selectedAttributes: [],
       };
       dispatch(addProductToCart(orderLine));
     }

@@ -1,11 +1,13 @@
-const sameAttributes = (attr1, attr2) => {
-  for (let i = 0; i < attr1.length; i++) {
-    const attrIndex = attr2.findIndex(
-      (element) => element.attributeId === attr1[i].attributeId
+const sameAttributes = (selectedAttributes1, selectedAttributes2) => {
+  for (let i = 0; i < selectedAttributes1.length; i++) {
+    const attrIndex = selectedAttributes2.findIndex(
+      (element) =>
+        element.attributeSet.id === selectedAttributes1[i].attributeSet.id
     );
     if (
       attrIndex === -1 ||
-      attr2[attrIndex].attributeItem.id !== attr1[i].attributeItem.id
+      selectedAttributes2[attrIndex].attribute.id !==
+        selectedAttributes1[i].attribute.id
     ) {
       return false;
     }
@@ -16,7 +18,12 @@ const sameAttributes = (attr1, attr2) => {
 export const findOrderlinesWithSameProduct = (NewOrderline, cart) => {
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].product.id === NewOrderline.product.id) {
-      if (sameAttributes(cart[i].selectedAttr, NewOrderline.selectedAttr)) {
+      if (
+        sameAttributes(
+          cart[i].selectedAttributes,
+          NewOrderline.selectedAttributes
+        )
+      ) {
         return i;
       }
     }

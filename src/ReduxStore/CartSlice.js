@@ -68,9 +68,10 @@ const CartSlice = createSlice({
       localStorage.setItem("order", JSON.stringify(state.order));
     },
     emptyTheCart: (state) => {
-      state.order = [];
-      state.orderTotal = 0;
-      localStorage.setItem("order", JSON.stringify(state.order));
+      console.log(JSON.stringify(state));
+      // state.order = [];
+      // state.orderTotal = 0;
+      // localStorage.setItem("order", JSON.stringify(state.order));
     },
   },
 });

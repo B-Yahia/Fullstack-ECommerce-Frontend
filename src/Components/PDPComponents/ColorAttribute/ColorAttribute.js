@@ -10,13 +10,13 @@ export default function ColorAttribute(props) {
   );
   const [selectedAttrOptionId, setSelectedAttrOptionId] = useState("");
   const index = ListOfSelectedAtteributes.findIndex(
-    (item) => item.attributeId === props.attr.id
+    (item) => item.attributeSet.id === props.attr.id
   );
   const dispatch = useDispatch();
-  const addAttr = (attrId, selectedAttr) => {
+  const addSelection = (attributeSet, attribute) => {
     const data = {
-      attributeId: attrId,
-      attributeItem: selectedAttr,
+      attributeSet: attributeSet,
+      attribute: attribute,
     };
     dispatch(AddAttribute(data));
   };
@@ -43,7 +43,7 @@ export default function ColorAttribute(props) {
             }
             key={item.id}
             style={{ backgroundColor: item.value }}
-            onClick={() => addAttr(props.attr.id, item)}
+            onClick={() => addSelection(props.attr, item)}
             data-testid={`product-attribute-${toKebabCase(props.attr.name)}-${
               item.displayValue
             }`}

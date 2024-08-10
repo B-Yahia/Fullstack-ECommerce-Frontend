@@ -11,6 +11,7 @@ export default function OrderlineCard(props) {
   const decreaseQ = (id) => {
     dispatch(decreaseUnits(id));
   };
+
   return (
     <div className="orderLine_card">
       <div className="orederline_info">
@@ -23,13 +24,13 @@ export default function OrderlineCard(props) {
           attr.type === "text" ? (
             <CartTextAttribute
               attr={attr}
-              selectedAttr={props.orderLine.selectedAttr}
+              selectedAttr={props.orderLine.selectedAttributes}
               key={index}
             />
           ) : (
             <CartColorAttribute
               attr={attr}
-              selectedAttr={props.orderLine.selectedAttr}
+              selectedAttr={props.orderLine.selectedAttributes}
               key={index}
             />
           )

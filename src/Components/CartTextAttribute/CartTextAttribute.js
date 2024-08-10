@@ -3,7 +3,7 @@ import "./CartTextAttribute.css";
 
 export default function CartTextAttribute(props) {
   const index = props.selectedAttr.findIndex(
-    (item) => item.attributeId === props.attr.id
+    (item) => item.attributeSet.id === props.attr.id
   );
   return (
     <div
@@ -15,12 +15,12 @@ export default function CartTextAttribute(props) {
         {props.attr.items.map((item) => (
           <button
             className={
-              item.id === props.selectedAttr[index].attributeItem.id
+              item.id === props.selectedAttr[index].attribute.id
                 ? "cart_attribute_item_text selected"
                 : "cart_attribute_item_text"
             }
             data-testid={
-              item.id === props.selectedAttr[index].attributeItem.id
+              item.id === props.selectedAttr[index].attribute.id
                 ? `cart-item-attribute-${toKebabCase(
                     props.attr.name
                   )}-${toKebabCase(item.value)}-selected`

@@ -3,7 +3,7 @@ import "./CartColorAttribute.css";
 
 export default function CartColorAttribute(props) {
   const index = props.selectedAttr.findIndex(
-    (item) => item.attributeId === props.attr.id
+    (item) => item.attributeSet.id === props.attr.id
   );
   return (
     <div className="cart_attribute_container">
@@ -12,14 +12,14 @@ export default function CartColorAttribute(props) {
         {props.attr.items.map((item) => (
           <button
             className={
-              item.id === props.selectedAttr[index].attributeItem.id
+              item.id === props.selectedAttr[index].attribute.id
                 ? "cart_attribute_item selected"
                 : "cart_attribute_item"
             }
             key={item.id}
             style={{ backgroundColor: item.value }}
             data-testid={
-              item.id === props.selectedAttr[index].attributeItem.id
+              item.id === props.selectedAttr[index].attribute.id
                 ? `cart-item-attribute-${toKebabCase(
                     props.attr.name
                   )}-${toKebabCase(item.displayValue)}-selected`
