@@ -26,7 +26,6 @@ export const GET_PRODUCTS = gql`
     }
   }
 `;
-
 export const GET_PRODUCT = gql`
   query ($id: ID!) {
     product(id: $id) {
@@ -53,5 +52,10 @@ export const GET_PRODUCT = gql`
       description
       brand
     }
+  }
+`;
+export const ADD_ORDER = gql`
+  mutation ($order: OrderInput) {
+    addOrder(order: $order)
   }
 `;

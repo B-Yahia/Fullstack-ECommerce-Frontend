@@ -2,12 +2,29 @@ import { useDispatch, useSelector } from "react-redux";
 import "./CartModal.css";
 import OrderlineCard from "../OrderlineCard/OrderlineCard";
 import { emptyTheCart } from "../../ReduxStore/CartSlice";
+import { useMutation } from "@apollo/client";
+import { ADD_ORDER } from "../../GraphQL/queries";
+import { getOrderlinesData } from "../../Utils/functions";
 
 export default function CartModal() {
   const cart = useSelector((state) => state.cart.order);
   const total = useSelector((state) => state.cart.orderTotal);
   const dispatch = useDispatch();
+  const [addOrder, { data, loading, error }] = useMutation(ADD_ORDER);
+
+  console.log(data);
+  console.log(loading);
+  console.log(error);
   const sendOrder = () => {
+    const orderlines = getOrderlinesData(cart);
+    addOrder({
+      variables: {
+        order: {
+          total: total,
+          orderlines: orderlines,
+        },
+      },
+    });
     dispatch(emptyTheCart());
   };
   return (

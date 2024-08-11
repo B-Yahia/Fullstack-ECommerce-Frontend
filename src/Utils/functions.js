@@ -46,3 +46,24 @@ export function toKebabCase(text) {
     .trim()
     .replace(/\s+/g, "-");
 }
+
+export function getOrderlinesData(orderlines) {
+  return orderlines.map((orderline) => ({
+    units: orderline.units,
+    product: {
+      id: orderline.product.id,
+    },
+    selectedAttributes: getSelectedAttributes(orderline.selectedAttributes),
+  }));
+}
+
+function getSelectedAttributes(selectedAttributes) {
+  return selectedAttributes.map(({ attributeSet, attribute }) => ({
+    attributeSet: {
+      id: attributeSet.id,
+    },
+    attribute: {
+      id: attribute.id,
+    },
+  }));
+}
