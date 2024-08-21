@@ -8,14 +8,17 @@ const AttributesSlice = createSlice({
   reducers: {
     AddAttribute: (state, action) => {
       const data = action.payload;
+      console.log(data);
       const attrIndex = state.list.findIndex(
-        (item) => data.attributeId === item.attributeId
+        (item) => data.attributeSet.id === item.attributeSet.id
       );
+
       if (attrIndex === -1) {
         state.list.push(data);
       } else {
         state.list[attrIndex] = data;
       }
+      console.log(state.list.length);
     },
     EmptyAttributesList: (state, action) => {
       state.list = [];

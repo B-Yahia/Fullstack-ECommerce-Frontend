@@ -18,13 +18,14 @@ export default function ColorAttribute(props) {
       attributeSet: attributeSet,
       attribute: attribute,
     };
+
     dispatch(AddAttribute(data));
   };
   useEffect(() => {
     if (index === -1) {
       setSelectedAttrOptionId(NaN);
     } else {
-      setSelectedAttrOptionId(props.selectedAttr[index].attributeItem.id);
+      setSelectedAttrOptionId(props.selectedAttr[index].attribute.id);
     }
   }, [ListOfSelectedAtteributes, index, props.selectedAttr]);
   return (

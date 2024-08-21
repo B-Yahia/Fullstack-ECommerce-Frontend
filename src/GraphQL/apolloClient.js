@@ -5,7 +5,7 @@ import {
   HttpLink,
 } from "@apollo/client";
 
-const httpLink = new HttpLink({ uri: "http://domain4.local/graphql" });
+const httpLink = new HttpLink({ uri: "http://185.170.196.9/graphql" });
 
 const client = new ApolloClient({
   link: httpLink,

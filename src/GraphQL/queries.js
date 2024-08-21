@@ -56,6 +56,23 @@ export const GET_PRODUCT = gql`
 `;
 export const ADD_ORDER = gql`
   mutation ($order: OrderInput) {
-    addOrder(order: $order)
+    addOrder(order: $order) {
+      id
+      total
+      orderlines {
+        product {
+          name
+        }
+        selectedAttributes {
+          attribute {
+            displayValue
+          }
+          attributeSet {
+            name
+            type
+          }
+        }
+      }
+    }
   }
 `;
