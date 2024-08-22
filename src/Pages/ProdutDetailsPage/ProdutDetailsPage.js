@@ -24,7 +24,6 @@ export default function ProdutDetailsPage() {
       selectedAttributes: selectedAttributes,
     };
     dispatch(addProductToCart(orderLine));
-    dispatch(toggleHideBtn());
   };
   useEffect(() => {
     dispatch(EmptyAttributesList());
