@@ -12,7 +12,6 @@ function App() {
     <div className="app_container">
       <Header />
       {!modal && <CartModal />}
-
       <main>
         <Routes>
           <Route path="/" element={<ProductListingPages />} />

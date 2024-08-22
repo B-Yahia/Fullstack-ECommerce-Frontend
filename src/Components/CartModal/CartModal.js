@@ -10,11 +10,8 @@ export default function CartModal() {
   const cart = useSelector((state) => state.cart.order);
   const total = useSelector((state) => state.cart.orderTotal);
   const dispatch = useDispatch();
-  const [addOrder, { data, loading, error }] = useMutation(ADD_ORDER);
+  const [addOrder] = useMutation(ADD_ORDER);
 
-  console.log(data);
-  console.log(loading);
-  console.log(error);
   const sendOrder = () => {
     const orderlines = getOrderlinesData(cart);
     addOrder({
