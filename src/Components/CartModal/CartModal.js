@@ -26,7 +26,7 @@ export default function CartModal() {
   };
   return (
     <div className="modal_container">
-      <div className="modal_overlay"></div>
+      <div className="modal_overlay" data-testid="cart-overlay"></div>
       <div className="modal_content">
         <div className="cart_modal_container">
           <div className="cart_modal_title">
