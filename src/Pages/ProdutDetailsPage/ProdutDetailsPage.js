@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import "./ProdutDetailsPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { EmptyAttributesList } from "../../ReduxStore/AttributesSlice";
-import { addProductToCart, toggleHideBtn } from "../../ReduxStore/CartSlice";
+import { addProductToCart } from "../../ReduxStore/CartSlice";
 import parse from "html-react-parser";
 import ColorAttribute from "../../Components/PDPComponents/ColorAttribute/ColorAttribute";
 import TextAttribute from "../../Components/PDPComponents/TextAttribute/TextAttribute";
@@ -24,7 +24,6 @@ export default function ProdutDetailsPage() {
       selectedAttributes: selectedAttributes,
     };
     dispatch(addProductToCart(orderLine));
-    dispatch(toggleHideBtn());
   };
   useEffect(() => {
     dispatch(EmptyAttributesList());
