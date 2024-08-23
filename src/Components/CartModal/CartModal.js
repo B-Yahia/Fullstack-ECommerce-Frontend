@@ -32,7 +32,7 @@ export default function CartModal() {
           <div className="cart_modal_title">
             <h3>My bag</h3>
 
-            {cart.length > 1 ? (
+            {cart.length == !1 ? (
               <p>{cart.length} Items </p>
             ) : (
               <p> {cart.length} Item</p>

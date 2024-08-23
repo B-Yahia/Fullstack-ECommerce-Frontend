@@ -1,57 +1,86 @@
-import { useEffect, useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
 import { AddAttribute } from "../../../ReduxStore/AttributesSlice";
 import "./TextAttribute.css";
-import { useDispatch, useSelector } from "react-redux";
 import { toKebabCase } from "../../../Utils/functions";
 
-export default function TextAttribute(props) {
-  const ListOfSelectedAtteributes = useSelector(
-    (state) => state.attributes.list
-  );
-  const [selectedAttrOptionId, setSelectedAttrOptionId] = useState("");
-  const index = ListOfSelectedAtteributes.findIndex(
-    (item) => item.attributeSet.id === props.attr.id
-  );
+class TextAttribute extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedAttrOptionId: "",
+    };
+  }
 
-  const dispatch = useDispatch();
-  const addSelection = (attributeSet, attribute) => {
+  componentDidMount() {
+    this.updateSelectedAttribute();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.ListOfSelectedAttributes !==
+        this.props.ListOfSelectedAttributes ||
+      prevProps.selectedAttr !== this.props.selectedAttr
+    ) {
+      this.updateSelectedAttribute();
+    }
+  }
+
+  updateSelectedAttribute = () => {
+    const { ListOfSelectedAttributes, attr, selectedAttr } = this.props;
+    const index = ListOfSelectedAttributes.findIndex(
+      (item) => item.attributeSet.id === attr.id
+    );
+
+    if (index === -1) {
+      this.setState({ selectedAttrOptionId: NaN });
+    } else {
+      this.setState({ selectedAttrOptionId: selectedAttr[index].attribute.id });
+    }
+  };
+
+  addSelection = (attributeSet, attribute) => {
     const data = {
       attributeSet: attributeSet,
       attribute: attribute,
     };
-    dispatch(AddAttribute(data));
+    this.props.dispatch(AddAttribute(data));
   };
-  useEffect(() => {
-    if (index === -1) {
-      setSelectedAttrOptionId(NaN);
-    } else {
-      setSelectedAttrOptionId(props.selectedAttr[index].attribute.id);
-    }
-  }, [ListOfSelectedAtteributes, index, props.selectedAttr]);
-  return (
-    <div
-      className="attribute_container"
-      data-testid={`product-attribute-${toKebabCase(props.attr.name)}`}
-    >
-      <h2>{props.attr.name}</h2>
-      <div className="attribute_items">
-        {props.attr.items.map((item) => (
-          <button
-            onClick={() => addSelection(props.attr, item)}
-            className={
-              item.id === selectedAttrOptionId
-                ? "selected_attribute_item_text"
-                : "attribute_item_text"
-            }
-            key={item.id}
-            data-testid={`product-attribute-${toKebabCase(props.attr.name)}-${
-              item.displayValue
-            }`}
-          >
-            {item.value}
-          </button>
-        ))}
+
+  render() {
+    const { attr } = this.props;
+    const { selectedAttrOptionId } = this.state;
+    return (
+      <div
+        className="attribute_container"
+        data-testid={`product-attribute-${toKebabCase(attr.name)}`}
+      >
+        <h2>{attr.name}</h2>
+        <div className="attribute_items">
+          {attr.items.map((item) => (
+            <button
+              onClick={() => this.addSelection(attr, item)}
+              className={
+                item.id === selectedAttrOptionId
+                  ? "selected_attribute_item_text"
+                  : "attribute_item_text"
+              }
+              key={item.id}
+              data-testid={`product-attribute-${toKebabCase(
+                attr.name
+              )}-${toKebabCase(item.displayValue)}`}
+            >
+              {item.value}
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+const mapStateToProps = (state) => ({
+  ListOfSelectedAttributes: state.attributes.list,
+});
+
+export default connect(mapStateToProps)(TextAttribute);
