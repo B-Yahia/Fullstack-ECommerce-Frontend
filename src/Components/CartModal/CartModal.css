@@ -6,6 +6,15 @@
   top: 70px;
   left: 0px;
 }
+.modal_container_hiden {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  z-index: 2;
+  top: 70px;
+  left: 0px;
+  scale: 0;
+}
 .modal_overlay {
   background-color: black;
   opacity: 0.2;

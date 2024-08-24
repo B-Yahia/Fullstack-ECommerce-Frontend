@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="app_container">
         <Header />
-        {!modal && <CartModal />}
+        {modal ? <CartModal display="hiden" /> : <CartModal />}
         <main>
           <Routes>
             <Route path="/" element={<ProductListingPages />} />
