@@ -31,14 +31,10 @@ class CartModal extends Component {
   }
 
   render() {
-    const { cart, total, display } = this.props;
+    const { cart, total } = this.props;
 
     return (
-      <div
-        className={
-          display === "hiden" ? "modal_container_hiden" : "modal_container"
-        }
-      >
+      <div className="modal_container">
         <div className="modal_overlay" data-testid="cart-overlay"></div>
         <div className="modal_content">
           <div className="cart_modal_container">
