@@ -10,7 +10,10 @@ class CartColorAttribute extends React.Component {
     );
 
     return (
-      <div className="cart_attribute_container">
+      <div
+        className="cart_attribute_container"
+        data-testid={`cart-item-attribute-${toKebabCase(attr.name)}`}
+      >
         <h2 className="cart_attribute_title">{attr.name}</h2>
         <div className="cart_attribute_items">
           {attr.items.map((item) => (

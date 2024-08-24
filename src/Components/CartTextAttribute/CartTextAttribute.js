@@ -27,10 +27,10 @@ class CartTextAttribute extends React.Component {
                 item.id === selectedAttr[index].attribute.id
                   ? `cart-item-attribute-${toKebabCase(
                       attr.name
-                    )}-${toKebabCase(item.value)}-selected`
+                    )}-${toKebabCase(item.displayValue)}-selected`
                   : `cart-item-attribute-${toKebabCase(
                       attr.name
-                    )}-${toKebabCase(item.value)}`
+                    )}-${toKebabCase(item.displayValue)}`
               }
               key={item.id}
             >
