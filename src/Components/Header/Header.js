@@ -12,7 +12,7 @@ class Header extends Component {
     super(props);
     this.state = {
       categories: data.data.categories,
-      activeCat: "",
+      activeCat: "all",
     };
   }
 
