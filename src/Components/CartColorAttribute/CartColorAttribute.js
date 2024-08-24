@@ -29,10 +29,10 @@ class CartColorAttribute extends React.Component {
                 item.id === selectedAttr[index].attribute.id
                   ? `cart-item-attribute-${toKebabCase(
                       attr.name
-                    )}-${toKebabCase(item.displayValue)}-selected`
+                    )}-${toKebabCase(item.value)}-selected`
                   : `cart-item-attribute-${toKebabCase(
                       attr.name
-                    )}-${toKebabCase(item.displayValue)}`
+                    )}-${toKebabCase(item.value)}`
               }
             ></button>
           ))}

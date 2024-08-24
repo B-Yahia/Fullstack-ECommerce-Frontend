@@ -66,9 +66,9 @@ class TextAttribute extends React.Component {
                   : "attribute_item_text"
               }
               key={item.id}
-              data-testid={`product-attribute-${toKebabCase(
-                attr.name
-              )}-${toKebabCase(item.displayValue)}`}
+              data-testid={`product-attribute-${toKebabCase(attr.name)}-${
+                item.value
+              }`}
             >
               {item.value}
             </button>

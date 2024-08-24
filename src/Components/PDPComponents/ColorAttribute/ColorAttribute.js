@@ -68,9 +68,9 @@ class ColorAttribute extends React.Component {
               key={item.id}
               style={{ backgroundColor: item.value }}
               onClick={() => this.addSelection(attr, item)}
-              data-testid={`product-attribute-${toKebabCase(
-                attr.name
-              )}-${toKebabCase(item.displayValue)}`}
+              data-testid={`product-attribute-${toKebabCase(attr.name)}-${
+                item.value
+              }`}
             ></button>
           ))}
         </div>
