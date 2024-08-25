@@ -6,9 +6,6 @@ import Header from "./Components/Header/Header";
 import CartModal from "./Components/CartModal/CartModal";
 import { connect } from "react-redux";
 import ProdutDetailsPage from "./Pages/ProdutDetailsPage/ProdutDetailsPage";
-import Test from "./Pages/Test/Test";
-import Greeting from "./Pages/Test/Greeting";
-import Counter from "./Pages/Test/Counter";
 
 class App extends Component {
   render() {
@@ -23,9 +20,6 @@ class App extends Component {
             <Route path="/" element={<ProductListingPages />} />
             <Route path="/:id" element={<ProductListingPages />} />
             <Route path="/product/:id" element={<ProdutDetailsPage />} />
-            <Route path="/test/:id" element={<Test />} />
-            <Route path="/greet" element={<Greeting name="Yahya" />} />
-            <Route path="/counter" element={<Counter />} />
           </Routes>
         </main>
       </div>
