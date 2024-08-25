@@ -18,7 +18,6 @@ const CartSlice = createSlice({
   reducers: {
     addProductToCart: (state, action) => {
       const Orderline = action.payload;
-      state.hiden = false;
       if (state.order.length === 0) {
         Orderline.id = 1;
         Orderline.units = 1;
