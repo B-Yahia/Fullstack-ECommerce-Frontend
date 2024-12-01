@@ -21,7 +21,7 @@ class ProdutDetailsPage extends Component {
 
   componentDidMount() {
     const { client, dispatch } = this.props;
-    const { id } = this.props.router.params; // Accessing the id from router params
+    const { id } = this.props.router.params;
 
     client
       .query({
