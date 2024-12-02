@@ -6,7 +6,7 @@ import {
 } from "@apollo/client";
 
 const httpLink = new HttpLink({
-  uri: "http://apitestdomain.site:8084/graphql",
+  uri: "https://ecom.apitestdomain.site/graphql",
 });
 
 const client = new ApolloClient({
