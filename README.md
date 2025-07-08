@@ -1,4 +1,4 @@
-# Scandiweb Fullstack React Frontend
+# Fullstack React Frontend
 
 ## Overview
 This project is a React-based e-commerce frontend for Scandiweb, featuring product listing, product details, cart management, and order placement. It uses Redux for state management and Apollo Client for GraphQL API integration.
