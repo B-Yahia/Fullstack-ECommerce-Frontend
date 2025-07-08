@@ -54,8 +54,7 @@ src/
 ## Setup
 1. Clone the repository:
    ```bash
-   git clone <repo-url>
-   cd frontend
+   git clone https://github.com/B-Yahia/e-com.git
    ```
 2. Install dependencies:
    ```bash
