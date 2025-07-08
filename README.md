@@ -70,6 +70,14 @@ src/
    ```
 4. The app will be available at `http://localhost:3000`.
 
+## Deployment
+
+The React Front is deployed in this URL: 
+  - [https://e-com-test.netlify.app/](https://e-com-test.netlify.app/)
+The Backend is deployed on my vps in this URL: 
+  - [https://ecom.apitestdomain.site/graphql](https://ecom.apitestdomain.site/graphql) 
+
+
 ## Usage
 - Browse products by category using the navigation bar.
 - Click on a product to view details and select attributes.
