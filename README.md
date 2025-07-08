@@ -1,7 +1,7 @@
 # Fullstack React Frontend
 
 ## Overview
-This project is a React-based e-commerce frontend for Scandiweb, featuring product listing, product details, cart management, and order placement. It uses Redux for state management and Apollo Client for GraphQL API integration.
+This project is a React-based e-commerce frontend, featuring product listing, product details, cart management, and order placement. It uses Redux for state management and Apollo Client for GraphQL API integration.
 
 ## Features
 - Product listing by category
@@ -15,7 +15,11 @@ This project is a React-based e-commerce frontend for Scandiweb, featuring produ
 ## Folder Structure
 ```
 src/
-  App.js, App.css, index.js, index.css, reportWebVitals.js
+  App.js 
+  App.css
+  index.js
+  index.css
+  reportWebVitals.js
   Components/
     CartColorAttribute/      # Color attribute selector for cart
     CartModal/               # Cart modal and order summary
@@ -70,12 +74,12 @@ src/
 - Browse products by category using the navigation bar.
 - Click on a product to view details and select attributes.
 - Add products to the cart and view the cart modal.
-- Place an order (mocked via GraphQL mutation).
+- Place an order (via GraphQL mutation).
 
 ## Notes
-- The app uses a public GraphQL endpoint for demo purposes.
+- The app uses a GraphQL endpoint for saving the orders in the backend.
 - Cart state is persisted in localStorage.
 
 ---
 
-© 2025 Scandiweb Fullstack React Frontend
+© 2025 Fullstack React Frontend
